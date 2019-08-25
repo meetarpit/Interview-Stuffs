@@ -1,0 +1,33 @@
+Actuator:
+1) it consist of production ready features used to manage and monitor your application.
+2) actuator has http endpoints,used to interact and manage you application.
+3) there are some built in endpoint given below:
+a)beans  (b)mappings  (c)shutdown (d)trace.
+
+Thymeleaf:
+1) it's a server side template engine which is used to provide eligant template for your web application.
+2) we can use it with html5.
+3) we are using it to render html page via controller.
+
+Disable autoConfiguration:
+@AutoConfiguration(exculde=className.class)
+
+@ConditionalOnMissingBean:
+this annotation is used to tell autoconfiguration to back away when bean exists.
+
+Relaxed binding:
+Relaxed binding in Spring Boot is applicable to specify the type-safe binding of configuration properties.
+
+SpringBoot DevlTools:
+1) it makes the devlopment process much easier.
+2) setup enviorment for spring boot.
+3) it is automatically disabled at a time of production.
+4) it disable template caching and enable debug  logging.
+
+@SptingBootTest:
+1) this annotation mainly used to make testing easy.
+2) searche will continue untill it find class with anntations @SpringBootConfiguartion and @SpringBootApplication.
+3) it provides application context from configuration.
+
+Hikari:
+it is a jdbc datasource implementation that provides connection pooling mechanism.it is a lightweight and give better performance. 

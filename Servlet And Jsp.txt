@@ -1,0 +1,46 @@
+WebServer vs Application Server:
+web:
+1) it is mainly used to handle http protocols
+2) it handles static content
+3) it displays site content
+App:
+1) it serves http protocol as well as other protocol.
+2) it handles dynamic content.
+3)it displays logic also.
+
+ServletRequestInformation:
+it is mainly used to provide all client request.information such as content type,length,parameter.
+
+ServletContext:
+this is mainly used to get configuration information from web.xml file.it is also used to set get and remove attribute from application scope.
+
+ServletConfig:
+this is mainly used to get configuration information from web.xml file.
+
+pageContext:
+it is mainly used to set get and remove attribute from page,request,session and application scope.
+
+page:
+it is a implicit object of type object class.<%this.log("msg")%>
+
+exception:
+it is a implicit object of java.lang.trowable class.it is mainly used to print exception.
+
+page directive:
+it means that this import is applied to whole jsp page.it tells that how to translate jsp page to corresponding servlet.
+
+life cycle of jsp:
+Translation
+complilation
+class loading
+instantiation
+intailization
+request processing
+destroy
+
+PrintWriter VS ServletOutputStream
+printwriter is mainly used to to print character based information
+where as ServletOutputStream primitive as well as charcter based information
+
+GenericServlet vs HttpServlet
+generic servlet is protocol independent where a httpservlet is httpProtocol specific

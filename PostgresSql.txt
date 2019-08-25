@@ -1,0 +1,67 @@
+create table product(p_id integer NOT NULL,p_name text NOT NULL,p_quality text,PRIMARY KEY(p_id));
+
+insert into product values(1,'shoes','Good');
+
+create table orders(o_id integer REFERENCES product(p_id)ON DELETE RESTRICT NOT NULL,o_price integer NOT NULL CHECK(o_price>0),PRIMARY KEY(o_id)) 
+
+create table items(item_id integer REFERENCES product(p_id)ON DELETE RESTRICT NOT NULL,quantity integer NOT NULL,PRIMARY KEY(item_id)) 
+
+alter table product drop gender;
+
+alter table product add phone integer;
+
+alter table product add CONSTRAINT pri1 UNIQUE(phone) ;
+
+select * from product;
+
+alter table product drop CONSTRAINT pri1;
+
+create type  mood1 as enum('sad','ok','happy');
+create table person(id integer NOT NULL,name text,current_mood mood1,PRIMARY KEY(id));
+
+insert into person values(1,'arpit','sad');
+
+ select * from person;
+*************************************************************
+create table jsonData(id integer,doc json);
+
+insert into jsonData values(1,'{
+"name":"arpit",
+"address":"none"
+}');
+
+Array Operations:
+
+
+create table array1(id integer NOT NULL,name integer[]);
+
+insert into array1 values(1,'{1,2,3,4}');
+*************************************************************
+select * from array1 ;
+
+update array1 set name=array_append(name,6) where id=1;
+update array1 set name=array_cat(name,ARRAY[2000,3000]);
+
+update array1 set name=array_remove(name,2000);
+
+create table array2(name text,salary integer[]);
+
+insert into array2 values('arpit','{8000,2000,30000,40000}');
+
+update array2 set salary=array_append(salary,5000);
+
+select * from array2;
+
+update array2 set salary=array_remove(salary,30000);
+
+select * from array2 where salary[1]=8000;
+ *************************************************************************************************************************
+Mathemetical function
+ceil(),floor(),abs(),ln(),round(),random()
+
+Strinng function
+position(),upper(),lower(),concat(),ascii()
+
+Advanced Agg function=>json_object_agg(coloumn name)
+                                    2)array_agg(column)                                                       
+**************************************************************

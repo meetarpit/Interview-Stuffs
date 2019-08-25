@@ -1,0 +1,150 @@
+                                                                                                                 Spring Mvc vs Spring Boot
+  Spring mvc
+1) provide mvc based project based on servlet API   
+2) configuration is flexible and straight farwaord using xml file
+3)Session can be achived by sessionFactory .
+4)Customizable handler mapping and view resolution.
+5)using hibernate to perform crud operation by using mvc pattern .
+
+Spring Boot
+1) it is a utility for setting up BigApplication in less time ,provides autoconfigured                                                                                                                                       projects.          
+2)Powerful and flexible configuration management using application.properties or yml file. 
+3)one has to unwrap SessionFactory using EntityManagerFactory then achive session.
+4)Spring Boot starters to offer ready to use auto-configuration for your application 
+5)By using jpa we don't need to create dao and service classes and perform crud operations in less time
+*************************************************************************************************************************
+
+                                                                                                               Jpa Vs Hibernate
+
+JPA
+1)JPA or Java Persistence API is a standard specification for ORM implementations 
+2)Second level Cache is not  available so Performance is not good
+3)Its support .Net using NHibernate tool
+4)Its generate JPQL(Java Persistence Query Language)
+
+Hibernate
+1)Hibernate is the actual ORM implementation or framework.
+2)Second level Cache is available so Performance is very good.
+3)Its not support to .Net
+4)Its generate HQL(Hibernate Query Language)               
+*************************************************************************************************************************
+                                                                                                                 Mysql  vs  PostgresSql
+Psql
+1)PostgreSQL is widely used in large systems where read and write speeds are crucial and data needs to validated.
+2)PostgreSQL performs well in OLTP/OLAP systems when read/write speeds are required and extensive data analysis is needed. 
+3)PostgreSQL also works well with Business Intelligence applications with DatawareHousing
+4)PostgreSQL tackles concurrency efficiently with its MVC implementation
+5) It also supports indexing JSON data for faster access.
+6)Supports materialized views
+7)Supports programming Languages
+
+mysql
+1)MySQL is a widely chosen for web based projects that need a database simply for straightforward data transactions.
+2)MySQL performs well with high concurrency scenarios. such as oltp
+3)MySQL is reliable and works well with Business Intelligence applications, as business intelligence applications are typically read-heavy.
+4)MySQL only has MVCC support in InnoDB.
+5) It also supports indexing JSON data for faster access.
+ 6)doesn't Support materialized views          
+7)doesn't Support programming Languages                
+************************************************************************************************************************
+                                                                                                                         Released Version
+Spring Current Version:5.0
+Hibernate Current Version:5.1
+mysql:8.0
+PostgreSql:11.1
+java:Java SE 10 (18.3)
+************************************************************************************************************************
+                                                                                                   @PathVariable vs @RequestParam
+
+@RequestParam
+mainly used to accept querry parameters in controller handler methos.
+
+@PathVariable
+identifies the pattern that is used in the URI for the incoming request
+
+*************************************************************************************************************************
+  # spring 5 provides 1)Reative Programming 2)Router Function and Handler Function 3) Remove portlet jasper support. 4) Kotlin support (staticly typed JVM)
+
+
+************************************************************************************************************************
+Spring MVC
+
+Autowired:
+The @Autowired annotation can be used with fields or methods for injecting a bean by type. This annotation allows Spring to resolve and inject collaborating beans into your bean.
+
+ModelAttribute:
+The @ModelAttribute annotation is one of the most important annotations in Spring MVC. It binds a method parameter or a method return value to a named model attribute and then exposes it to a web view.
+
+@ModelAndView:
+in this, we return object itself and set everything in that object which we are returning.
+
+@SessionAttributes:
+storing model Attributes for user session.
+
+@Validator:
+this leads to raise error when we have invalid data in request.then by using binding result we can get those errors.
+
+@RequestBody / @ResponseBody:
+it is mainly used to bind httpRequest/httpResponse with domain object in method parameter or return type.
+
+@EnableWebMVC:
+main purpose is to enable spring mvc config via java config.It’s equivalent to <mvc: annotation-driven> in an XML configuration.
+************************************************************************************************************************
+ViewResolver:
+The ViewResolver enables an application to render models in the browser 
+it is a interface which resolve view by name.
+
+FormBackingObject / commandObject:
+pojo class that collects all data from the form we are submitting.
+
+@Qualifier:
+It is used simultaneously with the @Autowired annotation to avoid confusion when multiple instances of a bean type are present.
+
+@Required:
+The @Required annotation is used on setter methods, and it indicates that the bean property that has this annotation must be populated at configuration time.
+
+@InitBinder:
+A method annotated with @InitBinder is used to customize a request parameter, URI template, and backing/command objects
+
+@ExceptionHandler 
+this annotations allow us to handle exception with in controller we don't need to writr a code for it
+
+@ComponentScan:
+this annotation make a java class as bean.this annotation pick it java class and put it into application context.
+
+@Repository:
+this annotation make java class as Dao and also throw uncheked exception provided from Dao methods.
+
+
+***********************************************************************************************************************
+DispatcherServlet:
+a single controller is responsible for directing incoming HttpRequests to all of an application’s other controllers and handlers.this concept is reponsible for coordinating a request right handler.
+
+ContextLoaderListner:
+it starts and shutdown the webApplicationContext.it combine ApplicationContext and servletContext so that shared bean can be used.
+
+************************************************************************************************************************
+<context:annotation-config> vs <context:component-scan>:
+1) it is mainly used to activate applied annotations in registered beans in application context.it is defined in application context.xml file itself.
+2)<context:component-scan> additionally scans the pakages and register the bean in application context.
+************************************************************************************************************************
+Limitations Of Autowiring:
+
+1) created overRiding possibilities due to <constructor-args> and <property>
+2) we can't autowire primitive data type such as class ,string
+3)Autowiring feature of spring framework enables you to inject the object dependency implicitly. It internally uses setter or constructor injection.
+************************************************************************************************************************
+TightCoupling:
+when one class is dependent on other class.
+
+LooseCoupling:
+when one class is not dependent on other class means we dont need to create an instance of class.
+
+DependencyInjection:
+spring framework looks for bean,indentify the dependencies ,creating instance of bean and autowired it.
+
+Beans:
+classes annotated with @component is known as beans
+
+@primary:
+when class x1 annotated with component is dependent on class 1 and class2 then ambiguity will be created so the primary is used to remove this ambiguity

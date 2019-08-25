@@ -1,0 +1,21 @@
+ManyToMany:   https://github.com/meetarpit/RM
+
+OneToMany: https://github.com/meetarpit/R
+
+RoleBaseApp: https://github.com/meetarpit/A
+
+BookingInMvc: https://github.com/meetarpit/B
+
+Config Folder: https://github.com/meetarpit/c
+
+
+commands for git bash:
+$ git init
+$ 
+git add --all
+ 
+git config user.name "meetarpit"
+
+git config user.email "arpitsgupta20@gmail.com"
+
+git commit -m "second Commit"

@@ -1,0 +1,6 @@
+mysql vs postgresSql:
+1)Acid comilance=>mysql paritally
+2)Programing Languages=>c/c++/python psql
+3)materialized views =>cache support psql
+4)SSL support=>mysql partially
+4)Json indexing =>mysql not support

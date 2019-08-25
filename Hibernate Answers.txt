@@ -1,0 +1,160 @@
+GET vs LOAD
+
+GET = it will return you an object if object not found it will return null value.
+
+LOAD= it will return you a proxy object.if object not found i will give ObjectNotFound   exception
+************************************************************************************************************************
+First Level Caching vs Second Level Caching
+
+First Level Caching =when client request single data from same session so instead  of hiting database it will return data from cache. and querry will be fire only once .if                                   client request single data from two different session so it will hit database twice. and querry will be fire twice.
+2)First Level Cache is associated with Session.
+3)it is enabled bydefault.
+
+ Second Level Caching=when client request single data from two different session so  instead  of hiting database it will return data from cache. and querry will be fire                                       only once .
+2)Second Level Cache is associated with SessionFactory.
+3)it is not enabled bydefault.
+************************************************************************************************************************
+Object States =   Transient(if one destroy any object then it will be loose)=>(persist)save=>Detach(break linkage b/w database and appication)=>Remove(delete data                             from database);
+
+CascadeTypes=>
+
+(CascadeType=' all' )=> means all operation like insert,update,delete perform on parent class will effect child class also.
+
+(CascadeType='none' )=> means all operation like insert,update,delete perform on parent class will  not effect child class also.           
+
+
+
+                                                           
+
+Spring MVC=>
+                                                                                                                                                          return
+Client => web.xml => Front Controller(Dispatcher Servlet) => Config file(Servlet.xml)=>Controller=======>Model And View =>through(config file)=>View Page 
+
+Dependency Injection=>Concept of injecting object to your application is called as Dependency Injection.
+
+ ApplicationContext context=new ClassPathXmlApplicationContext("spring.xml");
+        School s=(School) context.getBean("school");
+        s.work();
+
+for this we use spring framework Applicontext with classPathXmlappicationContext
+
+Constructor injection=> <constructor-arg value=" "></constructor-arg>        
+
+
+Differnce between @pathvariable and @RequestParam
+The @PathVariable annotation is used for data passed in the URI (e.g. RESTful web services) 
+while @RequestParam is used to extract the data found in query parameters.    
+
+*************************************************************************************************************************
+
+                                                                                                                 Spring Mvc vs Spring Boot
+  Spring mvc
+1) provide mvc based project based on servlet API   
+2) configuration is flexible and straight farwaord using xml file
+3)Session can be achived by sessionFactory .
+4)Customizable handler mapping and view resolution.
+5)using hibernate to perform crud operation by using mvc pattern .
+
+Spring Boot
+1) it is a utility for setting up BigApplication in less time ,provides autoconfigured                                                                                                                                       projects.          
+2)Powerful and flexible configuration management using application.properties or yml file. 
+3)one has to unwrap SessionFactory using EntityManagerFactory then achive session.
+4)Spring Boot starters to offer ready to use auto-configuration for your application 
+5)By using jpa we don't need to create dao and service classes and perform crud operations in less time
+************************************************************************************************************************
+
+                                                                                                               Jpa Vs Hibernate
+
+JPA
+1)JPA or Java Persistence API is a standard specification for ORM implementations 
+2)Second level Cache is not  available so Performance is not good
+3)Its support .Net using NHibernate tool
+4)Its generate JPQL(Java Persistence Query Language)
+
+Hibernate
+1)Hibernate is the actual ORM implementation or framework.
+2)Second level Cache is available so Performance is very good.
+3)Its not support to .Net
+4)Its generate HQL(Hibernate Query Language)               
+*************************************************************************************************************************
+                                                                                                                 Mysql  vs  PostgresSql
+Psql
+1)PostgreSQL is widely used in large systems where read and write speeds are crucial and data needs to validated.
+2)PostgreSQL performs well in OLTP/OLAP systems when read/write speeds are required and extensive data analysis is needed. 
+3)PostgreSQL also works well with Business Intelligence applications with DatawareHousing
+4)PostgreSQL tackles concurrency efficiently with its MVC implementation
+5) It also supports indexing JSON data for faster access.
+6)Supports materialized views
+7)Supports programming Languages
+
+mysql
+1)MySQL is a widely chosen for web based projects that need a database simply for straightforward data transactions.
+2)MySQL performs well with high concurrency scenarios. such as oltp
+3)MySQL is reliable and works well with Business Intelligence applications, as business intelligence applications are typically read-heavy.
+4)MySQL only has MVCC support in InnoDB.
+5) It also supports indexing JSON data for faster access.
+ 6)doesn't Support materialized views          
+7)doesn't Support programming Languages                
+************************************************************************************************************************
+Propagation
+
+Defines how transactions relate to each other. Common options
+
+Required: Code will always run in a transaction. Create a new transaction or reuse one if available.
+Requires_new: Code will always run in a new transaction. Suspend current transaction if one exist.
+
+Isolation
+
+Defines the data contract between transactions.
+
+Read Uncommitted: Allows dirty reads
+Read Committed: Does not allow dirty reads
+Repeatable Read: If a row is read twice in the same transaciton, result will always be the same
+Serializable: Performs all transactions in a sequence
+                                                      
+************************************************************************************************************************
+Concurrency Stratergies:
+
+READ_ONLY:
+this property let us to insert and retrive data but we can't perform any update on it.
+
+READ_WRITE:
+this property provides database consistency it is used when we perform alot of updates.
+
+NONSTRICT_READ_WRITE:
+this property prevent database consistency.it is used when we perform minmal updates.
+
+TRANSACTIONAL:
+it is used when we want to perform alot of transactions.
+***********************************************************************************************************************
+
+Update VS Merge:
+1)update should be used when session doesn't contain persistent state with same id......merge should be used, session doesn't have any satate.means u want to perform any modification at any time.
+
+***********************************************************************************************************************
+
+Interceptor:
+it is an interface which is used to maintain history of  all transactions ,autditing and auto dirty checking.
+
+methods are:
+findDirty : called after flush method.
+instatiate: called when persist object is instatitated.
+isUnSaved: called when object passed to saveorUpdate() method.
+onDelete:when object is deleted.
+onFlushDirty:when oject is updated.
+onLoad:when object is intialized.
+onSave:called when object is saved.
+postFlush:called after flush.
+preFlush:called before flush.
+
+************************************************************************************************************************Synchronized vs Volartile:
+in case of synchronized each owns a lock for critical seaction then enters into synchronized block.
+
+volatile is variable access modifier which forces all threads to get latest value of the variable from main memory. no lock is required to access volartile keyword.
+
+
+
+
+
+
+
