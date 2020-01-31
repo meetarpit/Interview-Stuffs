@@ -15,6 +15,7 @@ Spring Boot
 *************************************************************************************************************************
 
                          Jpa Vs Hibernate
+                         
 
 JPA
 1)JPA or Java Persistence API is a standard specification for ORM implementations 
@@ -30,6 +31,7 @@ Hibernate
 *************************************************************************************************************************
                        
                        Mysql  vs  PostgresSql
+                       
 Psql
 1)PostgreSQL is widely used in large systems where read and write speeds are crucial and data needs to validated.
 2)PostgreSQL performs well in OLTP/OLAP systems when read/write speeds are required and extensive data analysis is needed. 
@@ -55,7 +57,9 @@ mysql:8.0
 PostgreSql:11.1
 java:Java SE 10 (18.3)
 ************************************************************************************************************************
-                                                                                                   @PathVariable vs @RequestParam
+                                                                                                                                                  
+                                                                                                   
+                               @PathVariable vs @RequestParam
 
 @RequestParam
 mainly used to accept querry parameters in controller handler methos.
