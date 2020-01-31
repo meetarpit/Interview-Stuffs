@@ -88,7 +88,7 @@ this leads to raise error when we have invalid data in request.then by using bin
 it is mainly used to bind httpRequest/httpResponse with domain object in method parameter or return type.
 
 @EnableWebMVC:
-main purpose is to enable spring mvc config via java config.It’s equivalent to <mvc: annotation-driven> in an XML configuration.
+main purpose is to enable spring mvc config via java config.Itâ€™s equivalent to <mvc: annotation-driven> in an XML configuration.
 ************************************************************************************************************************
 ViewResolver:
 The ViewResolver enables an application to render models in the browser 
@@ -118,7 +118,7 @@ this annotation make java class as Dao and also throw uncheked exception provide
 
 ***********************************************************************************************************************
 DispatcherServlet:
-a single controller is responsible for directing incoming HttpRequests to all of an application’s other controllers and handlers.this concept is reponsible for coordinating a request right handler.
+a single controller is responsible for directing incoming HttpRequests to all of an applicationâ€™s other controllers and handlers.this concept is reponsible for coordinating a request right handler.
 
 ContextLoaderListner:
 it starts and shutdown the webApplicationContext.it combine ApplicationContext and servletContext so that shared bean can be used.
@@ -148,3 +148,9 @@ classes annotated with @component is known as beans
 
 @primary:
 when class x1 annotated with component is dependent on class 1 and class2 then ambiguity will be created so the primary is used to remove this ambiguity
+
+
+@Immutable:
+1)  you should always use the @Immutabale annotation if you have entities that should never be modified by Hibernate.
+2)  @Immutable annotation tells Hibernate to load entities in read-only mode.
+3)  @Immutabale entities are never modified for bulk update queries, from Hibernate 5.2.17 onwards.
