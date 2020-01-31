@@ -1,5 +1,5 @@
                                                                                                                  Spring Mvc vs Spring Boot
-  Spring mvc
+Spring mvc
 1) provide mvc based project based on servlet API   
 2) configuration is flexible and straight farwaord using xml file
 3)Session can be achived by sessionFactory .
@@ -14,7 +14,7 @@ Spring Boot
 5)By using jpa we don't need to create dao and service classes and perform crud operations in less time
 *************************************************************************************************************************
 
-                                                                                                               Jpa Vs Hibernate
+                         Jpa Vs Hibernate
 
 JPA
 1)JPA or Java Persistence API is a standard specification for ORM implementations 
@@ -28,7 +28,8 @@ Hibernate
 3)Its not support to .Net
 4)Its generate HQL(Hibernate Query Language)               
 *************************************************************************************************************************
-                                                                                                                 Mysql  vs  PostgresSql
+                       
+                       Mysql  vs  PostgresSql
 Psql
 1)PostgreSQL is widely used in large systems where read and write speeds are crucial and data needs to validated.
 2)PostgreSQL performs well in OLTP/OLAP systems when read/write speeds are required and extensive data analysis is needed. 
